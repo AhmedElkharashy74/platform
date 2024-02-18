@@ -1,0 +1,55 @@
+<%- include('partials/student-main-header') %>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1>Scan Qr</h1>
+    </div>
+        <video id="preview" class="w-100"></video>
+    <button id="startScanButton" class="btn btn-primary mt-3">Start Scanning</button>
+</main>
+
+    </div>
+<form action="/student/attend" method="post" id="attendanceForm">
+    <input type="hidden" name="lecture" value="" id="lectureInput">
+    <input type="hidden" name="name" value="<%= user_name %>">
+    <input type="submit" style="display:none">
+</form>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    let scanner = null;
+
+    function initializeScanner() {
+        scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+
+        scanner.addListener('scan', function(content) {
+            document.getElementById('lectureInput').value = content;
+            document.getElementById('attendanceForm').submit();
+        });
+
+        Instascan.Camera.getCameras().then(function(cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error('No cameras found.');
+            }
+        }).catch(function(e) {
+            console.error(e);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        let isScanning = false;
+
+        document.getElementById('startScanButton').addEventListener('click', function() {
+            if (!isScanning) {
+                initializeScanner();
+                isScanning = true;
+            }
+        });
+    });
+</script>
+
+<%- include('partials/main-footer') %>

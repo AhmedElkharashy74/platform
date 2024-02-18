@@ -1,0 +1,21 @@
+<%- include('partials/student-main-header') %>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Add File</h1>
+    </div>
+<form action="/student/upload" method="post" style="width: 40%;" enctype="multipart/form-data">
+    <div class="form-group">
+    </div>
+    <div class="form-group">
+    </div>
+    <div class="form-group" style="width: 100%;margin: 10px;">
+        <input class="form-control"type="file" name="file" id="">
+        <input type="hidden" value="<%=course_id%>" name="course_id">
+        <input type="hidden" value="<%=topic_id%>" name="assignment_name">
+        <input type="hidden" value="<%=user_name%>" name="student_name">
+    </div>
+    <button style="margin: 10px;"  type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</main>
+
+<%- include('partials/main-footer') %>

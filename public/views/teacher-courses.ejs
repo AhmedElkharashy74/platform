@@ -1,0 +1,25 @@
+<%- include('partials/teacher-main-header') %>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1>My Courses</h1>
+    </div>
+    <% data.forEach(course => { %>
+        <% let id = String(course.id)%>
+        <div class="card" style="margin: 10px;">
+            <a href="/teacher/course/<%=id%>" style="text-decoration: initial;">
+                <div class="card-body">
+                    <h4>
+                    This is the <%= course.course_name %> 
+                    </h4>
+                    <h6>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit
+                    </h6>
+                </div>
+            </a>
+        </div>
+    <% }) %>
+    <a href="/teacher/add-course" style="margin: 10px;">
+    <button class="btn btn-primary">add</button>
+    </a>
+</main>
+<%- include('partials/main-footer') %>

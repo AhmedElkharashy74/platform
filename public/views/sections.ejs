@@ -1,0 +1,17 @@
+<%- include('partials/main-header') %>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1><%= grade %> grade sections</h1>
+    </div>
+    <% data.forEach(section => { %>
+        <div class="card" style="margin: 10px;width: 39%;">
+            <a href="/Admin/grades/<%= section.grade %>/<%= section.section %>" style="text-decoration: initial;">
+                <div class="card-body">
+                    This is the <%= section.section %> 
+                </div>
+            </a>
+        </div>
+    <% }) %>
+       
+</main>
+<%- include('partials/main-footer') %>

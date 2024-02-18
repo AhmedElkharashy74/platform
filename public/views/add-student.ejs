@@ -1,0 +1,77 @@
+<%- include('partials/main-header') %>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Add a Student</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+        </div>
+      </div>
+
+      <form action="/Admin/Add-student/" method="post" style="width: 40%;">
+        <div class="form-group" style="margin: 10px;">
+            <label for="">User Name</label>
+            <input type="text" name="user_name" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+        <div class="form-group" style="margin: 10px;">
+          <label for="">Email address</label>
+          <input name="email" type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group" style="margin: 10px;">
+          <label for="">Password</label>
+          <input type="password" name="password" class="form-control" id="" placeholder="Password">
+        </div>
+        <div class="input-group mb-3" style="margin: 10px;">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">grade</label>
+            </div>
+            <select name="grade" class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="prep">prep</option>
+              <option value="first">first</option>
+              <option value="second">second</option>
+              <option value="third">third</option>
+              <option value="fourth">fourth</option>
+        </div>
+            </select>
+          </div>
+          <div class="input-group mb-3" style="margin: 10px;">    
+        
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">section</label>
+            </div>
+            <select name="section" class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="section1">section 1</option>
+              <option value="section2">section 2</option>
+              <option value="section3">section 3</option>
+              <option value="section5">section 5</option>
+              <option value="section6">section 6</option>
+              <option value="section7">section 7</option>
+              <option value="section8">section 8</option>
+              <option value="section9">section 9</option>
+              <option value="section10">section 10</option>
+              <option value="section11">section 11</option>
+            <select>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">department</label>
+            </div>
+            <select name="section" class="custom-select" id="inputGroupSelect01">
+              <option selected></option>
+              <option value="civil engineering">civil engineering</option>
+              <option value="archtecture engineering">archtecture engineering</option>
+              <option value="mechanical engineering">mechanical engineering</option>
+              <option value="elctrical engineering">elctrical engineering</option>
+              <option value="electronics engineering">electronics engineering</option>
+
+            <select>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="margin: 10px;">Submit</button>
+        </form>
+</main>
+
+<%- include('partials/main-footer') %>

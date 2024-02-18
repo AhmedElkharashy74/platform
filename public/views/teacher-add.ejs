@@ -1,0 +1,32 @@
+<%- include('partials/main-header') %>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Add a Teacher</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+        </div>
+      </div>
+
+      <form action="/Admin/Add-Teacher/" method="post" style="width: 40%;">
+        <div class="form-group">
+            <label for="">User Name</label>
+            <input type="text" name="name" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="">Email address</label>
+          <input name="email" type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input type="password" name="password" class="form-control" id="" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="">phone number</label>
+          <input type="number" name="phone_number" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</main>
+
+<%- include('partials/main-footer') %>
